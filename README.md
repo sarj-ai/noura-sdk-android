@@ -79,9 +79,13 @@ class AppNouraCallbackHandler : NouraSDKCallback {
 
 // Configure the SDK with your API key and callback handler
 NouraSDKManager.shared.configure(
-    apiUrl = "YOUR_API_URL",
-    apiKey = "YOUR_API_KEY",
     context = this,
+    baseURL = "https://noura-oyhlodgmcq-wx.a.run.app/",
+    apiKey = "demo_api_key_12345",
+    userId = "user_id",
+    deviceId = "device_id",
+    vbBaseUrl = "vb_base_url",
+    token = "rRqTeRUc8wTGP6j4VJ-Bms9D19Y",        
     callback = AppNouraCallbackHandler()
 )
 ```
