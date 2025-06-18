@@ -2,7 +2,7 @@
 
 NouraSDK is an Android library for building interactive AI-powered experiences in Android applications.
 
-**Current Version: 0.2.4**
+**Current Version: 0.2.5**
 
 ## Overview
 
@@ -29,20 +29,20 @@ repositories {
 }
 
 dependencies {
-    implementation("ai.sarj:nourasdk:0.2.4")
+    implementation("ai.sarj:nourasdk:0.2.5")
 }
 ```
 
 ### Alternative: Direct AAR
 
 Download the AAR directly:
-1. Download `nourasdk-0.2.4.aar` from the [releases](./releases/) directory
+1. Download `nourasdk-0.2.5.aar` from the [releases](./releases/) directory
 2. Place it in your `app/libs/` directory  
 3. Add to your `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation(files("libs/nourasdk-0.2.4.aar"))
+    implementation(files("libs/nourasdk-0.2.5.aar"))
     
     // Required dependencies
     implementation("com.airbnb.android:lottie-compose:6.4.1")
@@ -79,13 +79,9 @@ class AppNouraCallbackHandler : NouraSDKCallback {
 
 // Configure the SDK with your API key and callback handler
 NouraSDKManager.shared.configure(
+    apiUrl = "YOUR_API_URL",
+    apiKey = "YOUR_API_KEY",
     context = this,
-    baseURL = "https://noura-oyhlodgmcq-wx.a.run.app/",
-    apiKey = "demo_api_key_12345",
-    userId = "user_id",
-    deviceId = "device_id",
-    vbBaseUrl = "vb_base_url",
-    token = "rRqTeRUc8wTGP6j4VJ-Bms9D19Y",        
     callback = AppNouraCallbackHandler()
 )
 ```
