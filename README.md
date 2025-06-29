@@ -2,7 +2,7 @@
 
 NouraSDK is an Android library for building interactive AI-powered experiences in Android applications.
 
-**Current Version: 0.2.5**
+**Current Version: 0.3.0**
 
 ## Overview
 
@@ -29,20 +29,20 @@ repositories {
 }
 
 dependencies {
-    implementation("ai.sarj:nourasdk:0.2.5")
+    implementation("ai.sarj:nourasdk:0.3.0")
 }
 ```
 
 ### Alternative: Direct AAR
 
 Download the AAR directly:
-1. Download `nourasdk-0.2.5.aar` from the [releases](./releases/) directory
+1. Download `nourasdk-0.3.0.aar` from the [releases](./releases/) directory
 2. Place it in your `app/libs/` directory  
 3. Add to your `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation(files("libs/nourasdk-0.2.5.aar"))
+    implementation(files("libs/nourasdk-0.3.0.aar"))
     
     // Required dependencies
     implementation("com.airbnb.android:lottie-compose:6.4.1")
@@ -79,14 +79,10 @@ class AppNouraCallbackHandler : NouraSDKCallback {
 
 // Configure the SDK with your API key and callback handler
 NouraSDKManager.shared.configure(
+    apiUrl = "YOUR_API_URL",
+    apiKey = "YOUR_API_KEY",
     context = this,
-    baseURL = "https://noura-oyhlodgmcq-wx.a.run.app/",
-    apiKey = "demo_api_key_12345",
-    userId = "2f39b0ae-b379-4a55-a1f5-0ff758d62e60",
-    deviceId = "Z3o3f9rFiTKf738HOPUJjT",
-    vbBaseUrl = "https://api.int.vb",
-    token = "QBn6jbtvZnvcvw_pika8QG_0-iU",
-    callback = NouraCallbackHandler()
+    callback = AppNouraCallbackHandler()
 )
 ```
 
